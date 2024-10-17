@@ -20,15 +20,15 @@ jobs:
       #   USER: ${{ secrets.EC2_USER }}
       #   HOST: ${{ secrets.EC2_HOST }}
       run: |
-        # echo "Deploying to EC2 instance..."
+        echo "automatic deployment backend..."
         # echo "$PRIVATE_KEY" > private_key.pem
         # chmod 600 private_key.pem
         # ssh -o StrictHostKeyChecking=no -i private_key.pem $USER@$HOST << 'EOF'
         #   # Commands to execute on the EC2 instance
         #   cd /path/to/your/application
-        #  pull the new changes 
-          git pull origin 11.x
+        # pull the new changes 
+              git pull origin 11.x
 
           # run "php artisan migrate" to apply schema changes automatically
-          php artisan migrate --force 
-          echo "Deployment complete!"
+             php artisan migrate --force 
+        echo "Deployment complete!"
