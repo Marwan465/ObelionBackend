@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2    // Clones the repository that triggered the workflow into the GitHub Actions runner
 
     - name: automatic deployment
       # On repo settings > Secrets & Variables > Actions > New Repository Secrets then add the below secrets
