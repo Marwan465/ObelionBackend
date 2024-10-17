@@ -27,8 +27,9 @@ jobs:
         #   # Commands to execute on the EC2 instance
         #   cd /path/to/your/application
         # pull the new changes 
-              git pull origin 11.x
-
+              echo "git pull origin 11.x.."
+          # git pull origin 11.x  // actual shell script
           # run "php artisan migrate" to apply schema changes automatically
-             php artisan migrate --force 
+             echo "php artisan migrate --force..." 
+          # php artisan migrate --force   // actual shell script
         echo "Deployment complete!"
