@@ -16,10 +16,10 @@ jobs:
 # Comments are added only for testing please remove the commands comments before use
     - name: automatic deployment
       # On repo settings > Secrets & Variables > Actions > New Repository Secrets then add the below secrets
-      # env:
-      #   PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
-      #   USER: ${{ secrets.EC2_USER }}
-      #   HOST: ${{ secrets.EC2_HOST }}
+      env:
+         PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
+         USER: ${{ secrets.EC2_USER }}
+         HOST: ${{ secrets.EC2_HOST }}
       run: |
         echo "automatic deployment backend..."
         # echo "$PRIVATE_KEY" > private_key.pem
