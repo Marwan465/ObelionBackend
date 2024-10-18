@@ -13,9 +13,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2    
       # Clones the repository that triggered the workflow into the GitHub Actions runner
-# Comments are added only for testing please remove the commands comments before use
-    - name: automatic deployment
-      # On repo settings > Secrets & Variables > Actions > New Repository Secrets then add the below secrets
+
+    - name: Automatic deployment
+      # On repo settings > Secrets & Variables > Actions > New Repository Secrets, add the secrets
       env:
          PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
          USER: ${{ secrets.EC2_USER }}
@@ -25,13 +25,13 @@ jobs:
         echo "$PRIVATE_KEY" > private_key.pem
         chmod 600 private_key.pem
         ssh -o StrictHostKeyChecking=no -i private_key.pem $USER@$HOST << 'EOF'
-        #   # Commands to execute on the EC2 instance
-        #   cd /path/to/your/application
-        # pull the new changes 
-              echo "git pull origin 11.x.."
-          # git pull origin 11.x  // actual shell script
-          # run "php artisan migrate" to apply schema changes automatically
-             echo "php artisan migrate --force..." 
-          # php artisan migrate --force   // actual shell script
+          # Commands to execute on the EC2 instance
+          cd /path/to/your/application
+          # Pull the new changes
+          echo "git pull origin 11.x..."
+          git pull origin 11.x
+          # Run "php artisan migrate" to apply schema changes automatically
+          echo "php artisan migrate --force..."
+          php artisan migrate --force
         EOF
         echo "Deployment complete!"
