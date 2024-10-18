@@ -33,4 +33,5 @@ jobs:
           # run "php artisan migrate" to apply schema changes automatically
              echo "php artisan migrate --force..." 
           # php artisan migrate --force   // actual shell script
+        EOF
         echo "Deployment complete!"
