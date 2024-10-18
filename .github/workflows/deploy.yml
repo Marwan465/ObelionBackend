@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2    
       # Clones the repository that triggered the workflow into the GitHub Actions runner
-
+# Comments are added only for testing please remove the commands comments before use
     - name: automatic deployment
       # On repo settings > Secrets & Variables > Actions > New Repository Secrets then add the below secrets
       # env:
